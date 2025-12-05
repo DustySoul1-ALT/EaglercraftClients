@@ -7,7 +7,7 @@
             "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/N0VAClient/"
         },
         "Shadow Client": {
-            "img": "https://placehold.co/400x250/10B981/ffffff?text=Realm+of+Aethel",
+            "img": "https://placehold.co/400x250/000000/ffffff?text=Shadow+Client",
             "genre": "Minecraft",
             "description": "A lightweight Eaglercraft client aiming for higher FPS and extra graphical tweaks — like a browser‑compatible ‘OptiFine‑style’ client for smoother gameplay.",
             "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/ShadowClient/"
@@ -24,15 +24,11 @@
             "description": "WASM Version of Astra Client",
             "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/AstraClient?version=js"
         },
-        "Silent Watch": {
-            "img": "https://placehold.co/400x250/EF4444/ffffff?text=Silent+Watch",
+        "UwU Client": {
+            "img": "https://placehold.co/400x250/fa2a55/ffffff?text=UwU+Client",
             "genre": "Minecraft",
-            "description": "Uncover the secrets of an abandoned asylum while surviving the night."
-        },
-        "Eco-Engineers": {
-            "img": "https://placehold.co/400x250/6366F1/ffffff?text=Eco-Engineers",
-            "genre": "Minecraft",
-            "description": "Build and manage a sustainable city on a distant, resource-limited planet."
+            "description": "Really good hack client. ONLY MULTIPLAYER!",
+            "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/UwUClient/"
         }
     }
 }
