@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Game Carousel</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background inspired by modern gaming platforms */
+            color: #f0f6fc;
+        }
+        /* Custom scrollbar for aesthetics */
+        .carousel-container::-webkit-scrollbar {
+            height: 10px;
+        }
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: #2a64c5;
+            border-radius: 5px;
+        }
+        .carousel-container::-webkit-scrollbar-track {
+            background: #161b22;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <header class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold text-blue-400 mb-2">My Game Collection</h1>
+        <p class="text-lg text-gray-400">Discover your next favorite adventure.</p>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-semibold">Featured Games</h2>
+            <!-- Navigation buttons for desktop/touch experience -->
+            <div class="flex space-x-3">
+                <button id="prev-btn" class="p-3 bg-gray-800 hover:bg-gray-700 transition duration-150 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Previous Game">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="next-btn" class="p-3 bg-gray-800 hover:bg-gray-700 transition duration-150 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Next Game">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- The Carousel Container -->
+        <!-- Overflow-x-scroll and scroll-snap-type are key for touch-friendly carousels -->
+        <div id="carousel" class="carousel-container flex overflow-x-scroll space-x-6 pb-6 pt-2 snap-x snap-mandatory scroll-smooth">
+            <!-- Game cards will be inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+    
+        // Load JSON dynamically
+        fetch("games.json")
+            .then(r => r.json())
+            .then(simulatedGamesJson => {
+                const games = simulatedGamesJson.games;
+            
+                function createGameCard(title, data) {
+                    const card = document.createElement('div');
+                    card.className = 'flex-shrink-0 w-64 sm:w-80 bg-gray-800 rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 ease-in-out snap-start cursor-pointer';
+                
+                    // Image
+                    const img = document.createElement('img');
+                    img.src = data.img;
+                    img.alt = `Cover art for ${title}`;
+                    img.className = 'w-full h-40 object-cover border-b-4 border-blue-600';
+                    img.onerror = function() { this.onerror = null; this.src = 'https://placehold.co/400x250/0f172a/ffffff?text=Image+Missing'; };
+                
+                    // Content
+                    const content = document.createElement('div');
+                    content.className = 'p-4';
+                
+                    const titleEl = document.createElement('h3');
+                    titleEl.textContent = title;
+                    titleEl.className = 'text-xl font-bold mb-1 text-blue-300 truncate';
+                
+                    const genreEl = document.createElement('p');
+                    genreEl.textContent = data.genre;
+                    genreEl.className = 'text-sm font-medium text-gray-400 mb-3';
+                
+                    const descriptionEl = document.createElement('p');
+                    descriptionEl.textContent = data.description;
+                    descriptionEl.className = 'text-sm text-gray-500 line-clamp-2';
+                
+                    // Launch button (checks JSON url)
+                    const button = document.createElement('button');
+                    button.textContent = 'Launch Game';
+                    button.className = 'mt-4 w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition duration-150 shadow-md';
+                    button.onclick = () => {
+                        if (data.url) {
+                            window.open(data.url, "_blank"); // Opens the local HTML file
+                        } else {
+                            console.warn(`No URL found for ${title}`);
+                        }
+                    };
+                
+                    content.appendChild(titleEl);
+                    content.appendChild(genreEl);
+                    content.appendChild(descriptionEl);
+                    content.appendChild(button);
+                    
+                    card.appendChild(img);
+                    card.appendChild(content);
+                
+                    return card;
+                }
+            
+                // Populate carousel
+                Object.entries(games).forEach(([title, data]) => {
+                    const card = createGameCard(title, data);
+                    carousel.appendChild(card);
+                });
+            
+                // Carousel nav
+                function scrollCarousel(direction) {
+                    const cardWidth = 320 + 24;
+                    const scrollDistance = cardWidth * 1.5;
+                    carousel.scrollBy({ left: direction * scrollDistance, behavior: 'smooth' });
+                }
+                nextBtn.addEventListener('click', () => scrollCarousel(1));
+                prevBtn.addEventListener('click', () => scrollCarousel(-1));
+            })
+            .catch(err => console.error("Error loading games.json:", err));
+    });
+    </script>
+</body>
+</html>

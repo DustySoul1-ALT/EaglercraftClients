@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eaglercraft Auto Launcher</title>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // Read ?version=js or ?version=wasm
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('version') || 'js'; // default to js
+
+      // Get the current folder URL
+      const baseUrl = window.location.origin + window.location.pathname;
+
+      // Remove any file name from the current path
+      const folderUrl = baseUrl.substring(0, baseUrl.lastIndexOf('/') + 1);
+
+      // Construct the target URL: current folder + query
+      const targetUrl = folderUrl + query.toLowerCase();
+
+      // Redirect immediately
+      window.location.href = targetUrl;
+    });
+  </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,38 @@
+{
+    "games": {
+        "N0VA-Client": {
+            "img": "https://placehold.co/400x250/2563EB/ffffff?text=N0VA-Client",
+            "genre": "Minecraft",
+            "description": "A custom Eaglercraft 1.8 client with a redesigned interface and added features for smoother browser-based gameplay.",
+            "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/N0VAClient/"
+        },
+        "Shadow Client": {
+            "img": "https://placehold.co/400x250/10B981/ffffff?text=Realm+of+Aethel",
+            "genre": "Minecraft",
+            "description": "A lightweight Eaglercraft client aiming for higher FPS and extra graphical tweaks — like a browser‑compatible ‘OptiFine‑style’ client for smoother gameplay.",
+            "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/ShadowClient/"
+        },
+        "Astra Client JS": {
+            "img": "https://placehold.co/400x250/F59E0B/ffffff?text=Cyberdrift",
+            "genre": "Minecraft",
+            "description": "JS Version of Astra Client",
+            "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/AstraClient?version=js"
+        },
+        "Astra Client WASM": {
+            "img": "https://placehold.co/400x250/F59E0B/ffffff?text=Cyberdrift",
+            "genre": "Minecraft",
+            "description": "WASM Version of Astra Client",
+            "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/AstraClient?version=js"
+        },
+        "Silent Watch": {
+            "img": "https://placehold.co/400x250/EF4444/ffffff?text=Silent+Watch",
+            "genre": "Minecraft",
+            "description": "Uncover the secrets of an abandoned asylum while surviving the night."
+        },
+        "Eco-Engineers": {
+            "img": "https://placehold.co/400x250/6366F1/ffffff?text=Eco-Engineers",
+            "genre": "Minecraft",
+            "description": "Build and manage a sustainable city on a distant, resource-limited planet."
+        }
+    }
+}
