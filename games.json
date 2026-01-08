@@ -2,31 +2,37 @@
     "games": {
         "N0VA-Client": {
             "img": "https://placehold.co/400x250/2563EB/ffffff?text=N0VA-Client",
-            "genre": "Minecraft",
+            "genre": "Minecraft Eaglercraft",
             "description": "A custom Eaglercraft 1.8 client with a redesigned interface and added features for smoother browser-based gameplay.",
             "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/N0VAClient/"
         },
         "Shadow Client": {
             "img": "https://placehold.co/400x250/000000/ffffff?text=Shadow+Client",
-            "genre": "Minecraft",
+            "genre": "Minecraft Eaglercraft",
             "description": "A lightweight Eaglercraft client aiming for higher FPS and extra graphical tweaks — like a browser‑compatible ‘OptiFine‑style’ client for smoother gameplay.",
             "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/ShadowClient/"
         },
         "Astra Client JS": {
-            "img": "https://placehold.co/400x250/F59E0B/ffffff?text=Cyberdrift",
-            "genre": "Minecraft",
+            "img": "https://placehold.co/400x250/F59E0B/ffffff?text=AstraJS",
+            "genre": "Minecraft Eaglercraft",
             "description": "JS Version of Astra Client",
             "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/AstraClient?version=js"
         },
         "Astra Client WASM": {
-            "img": "https://placehold.co/400x250/F59E0B/ffffff?text=Cyberdrift",
-            "genre": "Minecraft",
+            "img": "https://placehold.co/400x250/F59E0B/ffffff?text=AstraWASM",
+            "genre": "Minecraft Eaglercraft",
             "description": "WASM Version of Astra Client",
             "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/AstraClient?version=js"
         },
+        "Resent Client": {
+            "img": "https://placehold.co/400x250/F59E0B/ffffff?text=Resent%20Client",
+            "genre": "Minecraft Eaglercraft",
+            "description": "A PVP-based eaglercraft client. WASM ONLY",
+            "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/ResentClient"
+        },
         "UwU Client": {
             "img": "https://placehold.co/400x250/fa2a55/ffffff?text=UwU+Client",
-            "genre": "Minecraft",
+            "genre": "Minecraft Eaglercraft",
             "description": "Really good hack client. ONLY MULTIPLAYER!",
             "url": "https://DustySoul1-ALT.github.io/EaglercraftClients/UwUClient/"
         }
